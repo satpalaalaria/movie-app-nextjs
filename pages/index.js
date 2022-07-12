@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Link from "next/link"
 import noImage from '../public/no_image.png'
 
 function Home({ posts }) {
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <Head>
         <title>Movie-show Details</title>
         <meta name="title" content="Movie-show Details" />
@@ -28,9 +27,9 @@ function Home({ posts }) {
       {
         posts.map((post) => {
           return (
-            <div key={post.id} className={styles.movieresult}>
+            <div key={post.id} className='movieresult'>
               <Link href={`about/${post.id}`}>
-                <div key={post.id} className={styles.card}>
+                <div key={post.id} className='card'>
                   <Image
                     src={post.poster_path !== null ? `https://www.themoviedb.org/t/p/w220_and_h330_face${post.poster_path}` : noImage}
                     alt={post.title}
@@ -38,7 +37,7 @@ function Home({ posts }) {
                     width={500}
                   />
                   <div>
-                    <span style={{ color: 'Black' }}><b>{post.title}</b></span>
+                    <span className='titleforcard'><b>{post.title}</b></span>
                   </div>
                 </div>
               </Link>

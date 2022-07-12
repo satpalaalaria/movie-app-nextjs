@@ -6,14 +6,12 @@ html, body {
   padding: 0;
   background: white;
   font-family: "Montserrat", helvetica, arial, sans-serif;
+  color: black;
   font-size: 14px;
   font-weight: 400;
 }
 
-.dark-mode {
-  background-color: rgb(226, 9, 9);
-  color: white;
-}
+
 a {
   color: inherit;
   text-decoration: none;

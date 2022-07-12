@@ -2,6 +2,7 @@ import styles from '../../styles/About.module.css'
 import Link from "next/link"
 import Head from 'next/head'
 import noImage from '../../public/no_image.png'
+import Button from '@material-ui/core/Button';
 import Image from 'next/image'
 
 function About({ posts }) {
@@ -9,13 +10,36 @@ function About({ posts }) {
         <div>
             <Head>
                 <title>{posts.title}</title>
+                <meta name="title" content={posts.title} />
                 <meta name="description" content={posts.overview} />
-                <link rel="icon" href={`https://www.themoviedb.org/t/p/w220_and_h330_face${posts.poster_path}`} />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://movie-app-nextjs-dusky.vercel.app/" />
+                <meta property="og:title" content={posts.title} />
+                <meta property="og:description" content={posts.overview} />
+                <meta property="og:image" content={`https://www.themoviedb.org/t/p/w220_and_h330_face${posts.poster_path}`} />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://movie-app-nextjs-dusky.vercel.app/" />
+                <meta property="twitter:title" content={posts.title} />
+                <meta property="twitter:description" content={posts.overview} />
+                <meta property="twitter:image" content={`https://www.themoviedb.org/t/p/w220_and_h330_face${posts.poster_path}`} />
+                <link rel=" shortcut icon" href={`https://www.themoviedb.org/t/p/w220_and_h330_face${posts.poster_path}`} />
             </Head>
             {posts ? (
                 <>
+                    {/* 
+                        <button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+                        </svg></button>
+                    </Link> */}
                     <Link href='/'>
-                        <button style={{ marginTop: '1rem', cursor: 'pointer' }}>Go back</button>
+                        <Button variant="contained" color="default" className={styles.buttonStyle}>
+                            <svg xmlns="http://www.w3.org/2000/svg" style={{ height: '20px', width: '30px' }} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                            </svg>
+                            <span style={{ fontWeight: 'bold', letterSpacing: '1px' }}>Back</span>
+                        </Button>
                     </Link>
                     <div className={styles.movie_card} id={styles.bright}>
                         <div className={styles.info_section}>

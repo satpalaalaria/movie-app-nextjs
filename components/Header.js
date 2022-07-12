@@ -7,9 +7,9 @@ function Header() {
             <Link href='/'>
                 <a className="header-a">Movies</a>
             </Link>
-            <label class="switch">
+            <label className="switch">
                 <input type="checkbox" />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
             </label>
         </div>
     )

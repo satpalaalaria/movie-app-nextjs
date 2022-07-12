@@ -38,7 +38,7 @@ function Home({ posts }) {
                     width={500}
                   />
                   <div>
-                    <span style={{ color: 'white' }}><b>{post.title}</b></span>
+                    <span style={{ color: 'Black' }}><b>{post.title}</b></span>
                   </div>
                 </div>
               </Link>

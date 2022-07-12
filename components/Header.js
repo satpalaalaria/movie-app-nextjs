@@ -7,6 +7,10 @@ function Header() {
             <Link href='/'>
                 <a className="header-a">Movies</a>
             </Link>
+            <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+            </label>
         </div>
     )
 }

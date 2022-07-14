@@ -28,11 +28,6 @@ function About({ posts }) {
             </Head>
             {posts ? (
                 <>
-                    {/* 
-                        <button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
-                        </svg></button>
-                    </Link> */}
                     <Link href='/'>
                         <Button variant="contained" color="default" className={styles.buttonStyle}>
                             <svg xmlns="http://www.w3.org/2000/svg" style={{ height: '20px', width: '30px' }} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -77,26 +72,8 @@ function About({ posts }) {
 
 export default About;
 
-export async function getStaticPaths() {
-    const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=ef2fc7966b7886b23c82a2279f82783c&language=en-US&page=1')
-    const data = await response.json()
-    const result = data.results
 
-    const paths = result.map(post => {
-        return {
-            params: {
-                aboutid: `${post.id}`
-            }
-        }
-    })
-
-    return {
-        paths,
-        fallback: false
-    }
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const { params } = context
     const response = await fetch(`https://api.themoviedb.org/3/movie/${params.aboutid}?api_key=ef2fc7966b7886b23c82a2279f82783c&language=en-US`)
     const data = await response.json()

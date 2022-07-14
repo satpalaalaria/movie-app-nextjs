@@ -44,18 +44,25 @@ a {
 
 
 /**********************************************************************************************/
-.container{
+/* .container{
   display: grid ;
   grid-template-columns: auto auto auto auto auto !important;
   width: 100%;
-  /* background: white !important; */
+  padding-bottom: 5rem;
+  padding-top: 1rem;
+  height: auto;
+} */
+/* .titleforcard{
+  color: black;
+} */
+.infnity-scroll-class{
+  display: grid ;
+  grid-template-columns: auto auto auto auto auto !important;
+  width: 100%;
   padding-bottom: 5rem;
   padding-top: 1rem;
   height: auto;
 }
-/* .titleforcard{
-  color: black;
-} */
 .card {
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -75,22 +82,22 @@ a {
 /*--------------------------------------------------------------------*/
 
 @media (max-width:1020px){
-  .container{
+  .infnity-scroll-class{
     grid-template-columns: auto auto auto auto!important;
   }
 }
 @media (max-width:826px){
-  .container{
+  .infnity-scroll-class{
     grid-template-columns: auto auto auto!important;
   }
 }
 @media (max-width:615px){
-  .container{
+  .infnity-scroll-class{
     grid-template-columns: auto auto!important;
   }
 }
 @media (max-width:410px){
-  .container{
+  .infnity-scroll-class{
     grid-template-columns: auto!important;
   }
 }

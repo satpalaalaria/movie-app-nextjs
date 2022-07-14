@@ -25,6 +25,7 @@ const themeInitializerScript = `(function() {
 })()
 `;
 
+
 function setInitialColorMode() {
     function getInitialColorMode() {
         const persistedPreferenceMode = window.localStorage.getItem('theme');

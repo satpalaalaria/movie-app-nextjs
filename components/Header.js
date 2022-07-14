@@ -32,13 +32,20 @@ function Header() {
             <Link href='/'>
                 <a className="header-a">Movies</a>
             </Link>
-            <label className="switch">
-                <input type="checkbox"
-                    checked={darkTheme}
-                    onChange={handleToggle}
-                />
-                <span className="slider round"></span>
-            </label>
+            <div>
+                {darkTheme !== undefined && (
+                    <form action="#">
+                        <label className="switch">
+                            <input
+                                type="checkbox"
+                                checked={darkTheme}
+                                onChange={handleToggle}
+                            />
+                            <span className="slider round"></span>
+                        </label>
+                    </form>
+                )}
+            </div>
         </div>
     )
 }
